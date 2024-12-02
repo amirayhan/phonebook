@@ -6,9 +6,21 @@ c1 = "#000000"
 c2 = "#4456f0"
 
 # configure
+
 win = Tk()
 win.title('PhoneBook | Md Rayhan Munshi')
-win.geometry('485x450')
+
+width= 485
+height= 450
+
+sys_width = win.winfo_screenwidth()
+sys_height = win.winfo_screenheight()
+
+c_x = int(sys_width/2 - width/2)
+c_y = int(sys_height/2 - height/2)
+
+win.geometry(f'{width}x{height}+{c_x}+{c_y}')
+
 win['bg'] = c0
 win.resizable(width=False,height=False)
 
@@ -27,12 +39,16 @@ soft_name = Label(frame_up, text="PhoneBook", height=1, font=('montserrat 17 bol
 soft_name.place(x=5,y=5)
 
 #frame_down content
-lvl_name = Label(frame_down, text="Name *", font=('montserrat 10'), width=20, height=1, anchor=NW)
+lvl_name = Label(frame_down, text="Name *", font=('montserrat 10'), width=20, height=1, bg=c0, anchor=NW)
 lvl_name.place(x=10,y=20)
+enty_name = Entry(frame_down, width=25,justify='left', highlightthickness=1, relief='solid')
+enty_name.place(x=80, y=20)
+
+lvl_gender = Label(frame_down, text='Gender *', font=('montserrat 10'),width=20, height=1,bg=c0, anchor=NW)
 
 
 
-
+    
 
 
 win.mainloop()
